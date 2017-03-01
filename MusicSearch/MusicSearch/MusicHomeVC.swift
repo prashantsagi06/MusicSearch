@@ -16,7 +16,7 @@ enum CellIdentifier: String {
 class MusicHomeVC: UIViewController {
     
     private struct FileConstants {
-        static let initialSearchText = "tom"
+        static let initialSearchText = "tom waits"
     }
     
     var dataSource: [Music] = [Music]() {
@@ -37,7 +37,8 @@ class MusicHomeVC: UIViewController {
         apiCall(FileConstants.initialSearchText)
     }
     
-    //
+    
+    // This maethod makes the call the DataManager and passes the text which user searched in the search bar.
     func apiCall(_ term: String ) -> Void {
         activityIndicator.startAnimating()
         DataManger().getMusicFor(term) { [weak self](success, response, error) in
@@ -80,6 +81,7 @@ extension MusicHomeVC: UISearchBarDelegate {
 }
 
 
+// MARK: - UITableViewDataSource methods
 extension MusicHomeVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

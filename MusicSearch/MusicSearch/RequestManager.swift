@@ -20,7 +20,10 @@ struct RequestManager {
             return
         }
         
-        guard let url = URL.init(string: urlString + "\(term)") else {
+        // Remove any white space from city to make sure that URL is not broken
+        let updatedTerm = term.components(separatedBy: .whitespaces).joined()
+        
+        guard let url = URL.init(string: urlString + "\(updatedTerm)") else {
             print("URL can't be nil")
             return
         }
