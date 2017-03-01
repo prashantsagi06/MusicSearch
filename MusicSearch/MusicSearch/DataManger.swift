@@ -11,7 +11,9 @@ import UIKit
 
 struct DataManger {
     
-    func getMusicFor(_ term: String , completion: @escaping CompletionHandler) -> Void{
+    // This method makes a call to Request Manager class where we actually fetch the data and the fetched data is returned to this method using blocks. Once data is fetched, its parsed using JSONSerialization.
+    
+    func getMusicFor(_ term: String , completion: @escaping CompletionHandler) -> Void {
         RequestManager().getMusicFor(term) { (success, data, error) in
             guard error == nil else {
                 DispatchQueue.main.async {
@@ -22,7 +24,6 @@ struct DataManger {
             if let data = data {
                 let dataSource = DataManger.parse(data as! NSData)
                 DispatchQueue.main.async {
-                    
                     completion(true, dataSource, nil)
                 }
             } else {
@@ -34,9 +35,11 @@ struct DataManger {
         }
     }
     
+    
+    // This method parses the data which is fetched from the iTunes Music Search API.
+    
     static func parse(_ data: NSData) -> [Music]? {
-        
-        do{
+        do {
             let res = try JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions.allowFragments)
             
             if let dict: NSDictionary = res as? NSDictionary{

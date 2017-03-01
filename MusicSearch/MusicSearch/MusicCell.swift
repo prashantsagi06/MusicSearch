@@ -15,7 +15,7 @@ class MusicCell: UITableViewCell {
     @IBOutlet weak var trackDescription: UILabel!
     
     var data: Music = Music.init(data: [:]) {
-        didSet{
+        didSet {
             trackName.text = data.trackName ?? ""
             artistName.text = data.artistName ?? ""
             trackDescription.text = data.longDescription ?? ""
@@ -27,6 +27,8 @@ class MusicCell: UITableViewCell {
             }
         }
     }
+    
+    // preparing the cell for reuse.
     
     override func prepareForReuse() {
         icon.image = nil

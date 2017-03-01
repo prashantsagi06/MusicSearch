@@ -48,8 +48,8 @@ struct Music {
     var collectionExplicitness: String?
     var collectionArtistViewUrl: String?
     
+    
     init(data: NSDictionary) {
-        
         self.kind = data["kind"] as? String
         self.country = data["country"] as? String
         self.trackId = data["trackId"] as? Double
@@ -85,7 +85,6 @@ struct Music {
         self.contentAdvisoryRating = data["contentAdvisoryRating"] as? String
         self.collectionExplicitness = data["collectionExplicitness"] as? String
         self.collectionArtistViewUrl = data["collectionArtistViewUrl"] as? String
-        
     }
 }
 

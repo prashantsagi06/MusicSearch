@@ -11,6 +11,8 @@ import UIKit
 
 struct RequestManager {
     
+    // This method makea a network call using dataTask of URLSession. Data is fetched using the data task and the passed to Data manager using completing handler.
+    
     func getMusicFor(_ term: String, completion: @escaping CompletionHandler) -> Void {
         let session = URLSession.init(configuration: URLSessionConfiguration.default)
         guard let urlString = RequestBuilder().getBaseURL() else {

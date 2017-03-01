@@ -12,7 +12,12 @@ import UIKit
 enum CellIdentifier: String {
     case MusicCell = "MusicCell"
 }
+
 class MusicHomeVC: UIViewController {
+    
+    private struct FileConstants {
+        static let initialSearchText = "tom"
+    }
     
     var dataSource: [Music] = [Music]() {
         didSet{
@@ -24,30 +29,36 @@ class MusicHomeVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    
+    // setup View
     func setUP() -> Void {
         tableView.estimatedRowHeight = Constants.estimatedRowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        apiCall("tom")
+        apiCall(FileConstants.initialSearchText)
     }
     
+    //
     func apiCall(_ term: String ) -> Void {
         activityIndicator.startAnimating()
         DataManger().getMusicFor(term) { [weak self](success, response, error) in
             self?.activityIndicator.stopAnimating()
             self?.dataSource.removeAll()
             if success {
-                self?.dataSource = (response as? [Music])!
+                guard let fetchedResponse = response as? [Music] else {
+                    return
+                }
+                self?.dataSource = fetchedResponse
             }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUP()
     }
-    
 }
+
+// MARK: - UISearchBarDelegate methods
 
 extension MusicHomeVC: UISearchBarDelegate {
     public func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
@@ -55,9 +66,11 @@ extension MusicHomeVC: UISearchBarDelegate {
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        
         if searchBar.text != nil {
-            apiCall(searchBar.text!)
+            guard let searchBarText = searchBar.text else {
+                return
+            }
+            apiCall(searchBarText)
         }
     }
     
@@ -79,5 +92,4 @@ extension MusicHomeVC: UITableViewDataSource {
         cell.data = data
         return cell
     }
-    
 }

@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 
 extension UIImageView {
+    
+    //This is an extension on UIImageView. In this method we make an API call using URLSession and fetch the image icon. Once its fetched, the image is set.
+    
     func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
         contentMode = mode
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -24,6 +27,7 @@ extension UIImageView {
             }
             }.resume()
     }
+    
     func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
         guard let url = URL(string: link) else { return }
         downloadedFrom(url: url, contentMode: mode)
