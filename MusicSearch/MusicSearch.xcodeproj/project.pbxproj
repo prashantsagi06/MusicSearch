@@ -10,7 +10,6 @@
 		8FA535F41E668C4000717684 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA535F31E668C4000717684 /* AppDelegate.swift */; };
 		8FA535FB1E668C4000717684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FA535FA1E668C4000717684 /* Assets.xcassets */; };
 		8FA535FE1E668C4000717684 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FA535FC1E668C4000717684 /* LaunchScreen.storyboard */; };
-		8FA536091E668C4000717684 /* MusicSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA536081E668C4000717684 /* MusicSearchTests.swift */; };
 		8FA536141E668C4000717684 /* MusicSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA536131E668C4000717684 /* MusicSearchUITests.swift */; };
 		8FA536291E66913600717684 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FA536281E66913600717684 /* Main.storyboard */; };
 		8FA5362A1E66913600717684 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FA536281E66913600717684 /* Main.storyboard */; };
@@ -30,6 +29,9 @@
 		8FA5363F1E6691F000717684 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA5363D1E6691F000717684 /* RequestBuilder.swift */; };
 		8FA536411E6691FE00717684 /* DataManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA536401E6691FE00717684 /* DataManger.swift */; };
 		8FA536421E6691FE00717684 /* DataManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA536401E6691FE00717684 /* DataManger.swift */; };
+		8FA536441E66BE4C00717684 /* RequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA536431E66BE4C00717684 /* RequestBuilderTests.swift */; };
+		8FA536461E66BE7200717684 /* RequestManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA536451E66BE7200717684 /* RequestManagerTests.swift */; };
+		8FA536481E66BEB600717684 /* MusicHomeVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA536471E66BEB600717684 /* MusicHomeVCTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +58,6 @@
 		8FA535FD1E668C4000717684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8FA535FF1E668C4000717684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FA536041E668C4000717684 /* MusicSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8FA536081E668C4000717684 /* MusicSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchTests.swift; sourceTree = "<group>"; };
 		8FA5360A1E668C4000717684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8FA5360F1E668C4000717684 /* MusicSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FA536131E668C4000717684 /* MusicSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchUITests.swift; sourceTree = "<group>"; };
@@ -70,6 +71,9 @@
 		8FA5363A1E6691DC00717684 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		8FA5363D1E6691F000717684 /* RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		8FA536401E6691FE00717684 /* DataManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManger.swift; sourceTree = "<group>"; };
+		8FA536431E66BE4C00717684 /* RequestBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilderTests.swift; sourceTree = "<group>"; };
+		8FA536451E66BE7200717684 /* RequestManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManagerTests.swift; sourceTree = "<group>"; };
+		8FA536471E66BEB600717684 /* MusicHomeVCTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicHomeVCTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +126,8 @@
 			children = (
 				8FA535F31E668C4000717684 /* AppDelegate.swift */,
 				8FA536211E668FF900717684 /* Model */,
-				8FA536221E66900500717684 /* View */,
 				8FA536231E66900E00717684 /* ViewController */,
+				8FA536221E66900500717684 /* View */,
 				8FA536241E66902D00717684 /* Utility */,
 				8FA536251E66903B00717684 /* RequestManager */,
 				8FA536261E66904700717684 /* RequestBuilder */,
@@ -139,7 +143,9 @@
 		8FA536071E668C4000717684 /* MusicSearchTests */ = {
 			isa = PBXGroup;
 			children = (
-				8FA536081E668C4000717684 /* MusicSearchTests.swift */,
+				8FA536471E66BEB600717684 /* MusicHomeVCTests.swift */,
+				8FA536431E66BE4C00717684 /* RequestBuilderTests.swift */,
+				8FA536451E66BE7200717684 /* RequestManagerTests.swift */,
 				8FA5360A1E668C4000717684 /* Info.plist */,
 			);
 			path = MusicSearchTests;
@@ -366,14 +372,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FA536361E6691B400717684 /* Constants.swift in Sources */,
-				8FA536091E668C4000717684 /* MusicSearchTests.swift in Sources */,
 				8FA5362D1E66917400717684 /* Music.swift in Sources */,
 				8FA536391E6691C900717684 /* Extension.swift in Sources */,
 				8FA5363C1E6691DC00717684 /* RequestManager.swift in Sources */,
+				8FA536461E66BE7200717684 /* RequestManagerTests.swift in Sources */,
 				8FA536301E66918800717684 /* MusicCell.swift in Sources */,
 				8FA536331E66919D00717684 /* MusicHomeVC.swift in Sources */,
+				8FA536441E66BE4C00717684 /* RequestBuilderTests.swift in Sources */,
 				8FA5363F1E6691F000717684 /* RequestBuilder.swift in Sources */,
 				8FA536421E6691FE00717684 /* DataManger.swift in Sources */,
+				8FA536481E66BEB600717684 /* MusicHomeVCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
